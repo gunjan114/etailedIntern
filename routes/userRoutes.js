@@ -6,7 +6,7 @@ const isLoggedIn = require("../middleware/isLoggedIn")
 
 router.post("/register", controller.register)
 router.post("/login", controller.login)
-router.post("/logout", controller.logout)
+router.post("/logout", isLoggedIn, controller.logout)
 router.get("/profile", isLoggedIn, controller.profile)
 router.patch("/profile", isLoggedIn, controller.updateProfile)
 

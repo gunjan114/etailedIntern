@@ -56,4 +56,10 @@ The `isLoggedIn` middleware is used to protect routes that require authenticatio
 
 ---
 
+## 📲 Screenshot of working app
+
 ![Screenshot](profile.png)
+
+![Screenshot](preference.png)
+
+![Screenshot](dashboard-summary.png)

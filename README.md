@@ -25,29 +25,32 @@ This is a Node.js backend project developed as part of an internship assignment.
 
 ## 🔐 Authentication & User Routes
 
-| Method | Route            | Description                     | Auth Required |
-|--------|------------------|----------------------------------|---------------|
-| POST   | `/register`      | Register a new user              | ❌            |
-| POST   | `/login`         | Log in a user                    | ❌            |
-| POST   | `/logout`        | Log out the current user         | ✅            |
-| GET    | `/profile`       | Get current user's profile (Protected Route)       | ✅            |
-| PATCH  | `/profile`       | Update current user's profile    | ✅            |
+| Method | Route       | Description                                        | Auth Required | Body                            |
+|--------|-------------|----------------------------------------------------|---------------|---------------------------------|
+| POST   | `/register` | Register a new user                                | ❌            | `{ name, email, password }`     |
+| POST   | `/login`    | Log in a user                                      | ❌            | `{ email, password }`           |
+| POST   | `/logout`   | Log out the current user                           | ✅            | `-`                             |
+| GET    | `/profile`  | Get current user's profile (Procted Route)         | ✅            | `-`                             |
+| PATCH  | `/profile`  | Update current user's profile                      | ✅            | `{ updatedName, updatedEmail }` |
+
 
 ---
 
 ## 🎛️ Preferences Routes
 
-| Method | Route    | Description                  | Auth Required |
-|--------|----------|------------------------------|---------------|
-| POST   | `/set`   | Save user preferences         | ✅            |
-| GET    | `/get`   | Get saved user preferences    | ✅            |
+| Method | Route  | Description               | Auth Required | Body                |
+|--------|--------|---------------------------|---------------|---------------------|
+| POST   | `/set` | Save user preferences     | ✅            | `{ theme, layout }` |
+| GET    | `/get` | Get saved user preferences| ✅            | `-`                 |
+
 
 ## 📊 Dashboard Summary Routes
 
-| Method | Route        | Description                   | Auth Required |
-|--------|--------------|-------------------------------|---------------|
-| POST   | `/setData`   | Store dashboard summary data  | ✅            |
-| GET    | `/getData`   | Fetch dashboard summary data  | ✅            |
+| Method | Route      | Description                  | Auth Required | Body                                |
+|--------|------------|------------------------------|---------------|-------------------------------------|
+| POST   | `/setData` | Store dashboard summary data | ✅            | `{ team, projects, notifications }` |
+| GET    | `/getData` | Fetch dashboard summary data | ✅            | `-`                                 |
+
 
 ---
 ## 🔐 JWT Middleware

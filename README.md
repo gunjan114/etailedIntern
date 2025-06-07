@@ -54,3 +54,6 @@ This is a Node.js backend project developed as part of an internship assignment.
 
 The `isLoggedIn` middleware is used to protect routes that require authentication. It verifies the JWT token provided in the request header or cookie.
 
+---
+
+![Screenshot](profile.png)

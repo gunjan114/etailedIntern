@@ -19,7 +19,7 @@ const register = async (req, res) => {
                 password: hash
             })
 
-            let token = jwt.sign({email: email, userId: createdUser._id}, process.env.SECRET_KEY)
+            let token = jwt.sign({email: email, userId: createdUser._id}, "secretkey")
             res.cookie("token", token)
 
             res.send(createdUser)
@@ -37,7 +37,7 @@ const login = async (req, res) => {
 
     bcrypt.compare(password, user.password, (err, result) => {
         if(result) {
-            let token = jwt.sign({email: email, userId: user._id}, process.env.SECRET_KEY)
+            let token = jwt.sign({email: email, userId: user._id}, "secretkey")
             res.cookie("token", token)
 
             res.send(user)

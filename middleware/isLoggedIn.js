@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken")
 function isLoggedIn(req, res, next) {
     let token = req.cookies.token
 
-    if(token === "") {
+    if(!token || token === "") {
         return res.send("Please login first")
     }
 

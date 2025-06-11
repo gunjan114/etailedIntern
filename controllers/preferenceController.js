@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken")
 
 const set = async (req, res) => {
     let token = req.cookies.token
-    let decoded = jwt.verify(token, process.env.SECRET_KEY)
+    let decoded = jwt.verify(token, "secretkey")
 
     let {theme, layout} = req.body
 
@@ -30,9 +30,13 @@ const set = async (req, res) => {
 
 const get = async (req, res) => {
     let token = req.cookies.token
-    let decoded = jwt.verify(token, process.env.SECRET_KEY)
+    let decoded = jwt.verify(token, "secretkey")
 
     let preference = await preferenceModel.findOne({userId: decoded.userId})
+
+    if(preference === null) {
+        return res.send("No data persist")
+    }
 
     res.send(preference)
 }

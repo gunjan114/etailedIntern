@@ -1,14 +1,22 @@
 {
   "name": "etailed-intern-project",
   "version": "1.0.0",
-  "main": "app.js",
+  "description": "This is a Node.js backend project developed as part of an internship assignment. It includes user authentication, profile management, preferences handling, and dashboard summary APIs.",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gunjan114/etailedIntern.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/gunjan114/etailedIntern/issues"
+  },
+  "homepage": "https://github.com/gunjan114/etailedIntern#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
